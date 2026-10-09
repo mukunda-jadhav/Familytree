@@ -231,6 +231,6 @@ app.use((e, req, res, next) => {
             : "Request failed. Check your data and server configuration.",
     });
 });
-app.listen(process.env.PORT || 3001, "127.0.0.1", () =>
-  console.log("Kinfolk API http://127.0.0.1:3001"),
+app.listen(process.env.PORT || 3001, "0.0.0.0", () =>
+  console.log("Kinfolk API listening on port " + (process.env.PORT || 3001)),
 );
