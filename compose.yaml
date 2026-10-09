@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: kinfolk
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+      POSTGRES_DB: kinfolk
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - family-data:/var/lib/postgresql/data
+volumes:
+  family-data:
